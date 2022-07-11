@@ -30,7 +30,7 @@ int print_binary(va_list b);
 int print_octal(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
-int print_address(va_list p);
+int print_add(va_list p);
 int super_print(va_list S);
 int string_reverse(va_list r);
 int print_R(va_list R);

@@ -20,7 +20,7 @@ static int (*get_format_printer(const char *format))(va_list)
 		{"o", print_octal},
 		{"x", print_x},
 		{"X", print_X},
-		{"p", print_address},
+		{"p", print_add},
 		{"S", super_print},
 		{"r", string_reverse},
 		{"R", print_R},
@@ -38,8 +38,8 @@ static int (*get_format_printer(const char *format))(va_list)
 }
 
 /**
- * _printf - prints anything
- * @format: list of argument types passed to the function
+ * _printf - takes string and specifier and prints
+ * @format: variable list of arguments
  *
  * Return: number of characters printed
  */
