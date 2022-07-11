@@ -10,18 +10,18 @@ static int (*check_for_specifiers(const char *format))(va_list)
 {
 	unsigned int i;
 	print_t p[] = {
-		{"c", print_ch},
+		{"c", print_char},
 		{"s", print_string},
 		{"i", print_int},
 		{"d", print_dec},
 		{"u", print_unsigned},
 		{"b", print_binary},
 		{"o", print_octal},
-		{"x", print_x},
-		{"X", print_X},
-		{"p", print_address},
-		{"S", print_S},
-		{"r", print_r},
+		{"x", print_xlow},
+		{"X", print_Xcap},
+		{"p", print_add},
+		{"S", print_super},
+		{"r", print_reverse},
 		{"R", print_R},
 		{NULL, NULL}
 	};

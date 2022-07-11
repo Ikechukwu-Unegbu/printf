@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- * print_ch - prints a char
+ * print_char - prints a char
  * @c: char to print
  *
  * Return: always 1
  */
-int print_ch(va_list c)
+int print_char(va_list c)
 {
 	char ch = (char)va_arg(c, int);
 
@@ -36,12 +36,12 @@ int print_string(va_list s)
 }
 
 /**
- * hex_print - prints a char's ascii value in uppercase hex
+ * hex_prtinta - prints a char's ascii value in uppercase hex
  * @c: char to print
  *
  * Return: number of chars printed (always 2)
  */
-static int hex_print(char c)
+static int hex_prtinta(char c)
 {
 	int count;
 	char diff = 'A' - ':';
@@ -60,12 +60,12 @@ static int hex_print(char c)
 }
 
 /**
- * print_S - prints a string and nonprintable character ascii values
+ * print_super - prints a string and nonprintable character ascii values
  * @S: string to print
  *
  * Return: number of chars printed
  */
-int print_S(va_list S)
+int print_super(va_list S)
 {
 	unsigned int i;
 	int count = 0;
@@ -80,7 +80,7 @@ int print_S(va_list S)
 			_putchar('\\');
 			_putchar('x');
 			count += 2;
-			count += hex_print(str[i]);
+			count += hex_prtinta(str[i]);
 		}
 		else
 		{
@@ -97,7 +97,7 @@ int print_S(va_list S)
  *
  * Return: number of chars printed
  */
-int print_r(va_list r)
+int print_reverse(va_list r)
 {
 	char *str;
 	int i, count = 0;

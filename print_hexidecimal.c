@@ -3,7 +3,7 @@
 /**
  * print_hex - prints an unsigned int in hexidecimal form
  * @n: unsigned int to print
- * @c: flag to determine case of printing (0 = lower, 1 = upper)
+ * @c: flag to decide case of printing (0 = lower, 1 = upper)
  *
  * Return: number of digits printed
  */
@@ -40,35 +40,35 @@ int print_hex(unsigned int n, unsigned int c)
 	return (count);
 }
 /**
- * print_x - takes an unsigned int and prints it in lowercase hex notation
+ * print_xlow - takes an unsigned int and prints it in lowercase hex notation
  * @x: unsigned int to print
  *
  * Return: number of digits printed
  */
-int print_x(va_list x)
+int print_xlow(va_list x)
 {
 	return (print_hex(va_arg(x, unsigned int), 0));
 }
 
 /**
- * print_X - takes am unsigned int and prints it in uppercase hex notation
+ * print_Xcap - recives unsigned int and prints it in uppercase hex
  * @X: unsigned int to print
  *
  * Return: number of digits printed
  */
-int print_X(va_list X)
+int print_Xcap(va_list X)
 {
 	return (print_hex(va_arg(X, unsigned int), 1));
 }
 
 /**
- * _pow - calculates an exponent
+ * _power - calculates an exponent
  * @base: base of exponent
  * @exponent: exponent of number
  *
  * Return: base ^ exponent
  */
-static unsigned long _pow(unsigned int base, unsigned int exponent)
+static unsigned long _power(unsigned int base, unsigned int exponent)
 {
 	unsigned int i;
 	unsigned long ans = base;
@@ -81,12 +81,12 @@ static unsigned long _pow(unsigned int base, unsigned int exponent)
 }
 
 /**
- * print_address - prints an address
+ * print_add - prints an address
  * @p: address to print
  *
  * Return: number of characters to print
  */
-int print_address(va_list p)
+int print_add(va_list p)
 {
 	int count = 0;
 	unsigned int a[16];
@@ -107,7 +107,7 @@ int print_address(va_list p)
 	_putchar('0');
 	_putchar('x');
 	count = 2;
-	m = _pow(16, 15); /* 16 ^ 15 */
+	m = _power(16, 15); /* 16 ^ 15 */
 	a[0] = n / m;
 	for (i = 1; i < 16; i++)
 	{
