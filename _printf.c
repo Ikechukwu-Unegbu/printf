@@ -1,17 +1,16 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * get_format_printer - checks if there is a valid format
- * and returns the right function to handle it.
- * @format: possible format
+ * check_for_specifiers - checks if there is a valid format specifier
+ * @format: possible format specifier
  *
- * Return: pointer to right function or NULL
+ * Return: pointer to valid function or NULL
  */
-static int (*get_format_printer(const char *format))(va_list)
+static int (*check_for_specifiers(const char *format))(va_list)
 {
 	unsigned int i;
 	print_t p[] = {
-		{"c", print_char},
+		{"c", print_ch},
 		{"s", print_string},
 		{"i", print_int},
 		{"d", print_dec},
@@ -20,9 +19,9 @@ static int (*get_format_printer(const char *format))(va_list)
 		{"o", print_octal},
 		{"x", print_x},
 		{"X", print_X},
-		{"p", print_add},
-		{"S", super_print},
-		{"r", string_reverse},
+		{"p", print_address},
+		{"S", print_S},
+		{"r", print_r},
 		{"R", print_R},
 		{NULL, NULL}
 	};
@@ -38,8 +37,8 @@ static int (*get_format_printer(const char *format))(va_list)
 }
 
 /**
- * _printf - takes string and specifier and prints
- * @format: variable list of arguments
+ * _printf - prints anything
+ * @format: list of argument types passed to the function
  *
  * Return: number of characters printed
  */
@@ -61,7 +60,7 @@ int _printf(const char *format, ...)
 		}
 		if (!format[i])
 			return (sum);
-		f = get_format_printer(&format[i + 1]);
+		f = check_for_specifiers(&format[i + 1]);
 		if (f != NULL)
 		{
 			sum += f(valist);

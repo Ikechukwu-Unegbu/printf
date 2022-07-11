@@ -9,9 +9,9 @@
 #include <stddef.h>
 
 /**
- * struct print - struct for printing different types
+ * struct print - structure for printing various types
  * @t: type to print
- * @f: function that will print
+ * @f: function to print
  */
 typedef struct print
 {
@@ -21,7 +21,7 @@ typedef struct print
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int print_char(va_list c);
+int print_ch(va_list c);
 int print_string(va_list s);
 int print_int(va_list i);
 int print_dec(va_list d);
@@ -30,10 +30,10 @@ int print_binary(va_list b);
 int print_octal(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
-int print_add(va_list p);
-int super_print(va_list S);
-int string_reverse(va_list r);
+int print_address(va_list p);
+int print_S(va_list S);
+int print_r(va_list r);
 int print_R(va_list R);
-int buffer(char *buf, unsigned int nbuf);
+int print_buf(char *buf, unsigned int nbuf);
 
 #endif

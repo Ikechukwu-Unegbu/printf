@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_hexidecmial - print unsigned int as hexidecimal form
- * @n: unsigned int input
+ * print_hex - prints an unsigned int in hexidecimal form
+ * @n: unsigned int to print
  * @c: flag to determine case of printing (0 = lower, 1 = upper)
  *
  * Return: number of digits printed
  */
-int print_hexidecmial(unsigned int n, unsigned int c)
+int print_hex(unsigned int n, unsigned int c)
 {
 	unsigned int a[8];
 	unsigned int i, m, sum;
@@ -40,14 +40,14 @@ int print_hexidecmial(unsigned int n, unsigned int c)
 	return (count);
 }
 /**
- * print_x - print unsigned int and prints it in lowercase hex notation
- * @x: unsigned input
+ * print_x - takes an unsigned int and prints it in lowercase hex notation
+ * @x: unsigned int to print
  *
  * Return: number of digits printed
  */
 int print_x(va_list x)
 {
-	return (print_hexidecmial(va_arg(x, unsigned int), 0));
+	return (print_hex(va_arg(x, unsigned int), 0));
 }
 
 /**
@@ -58,7 +58,7 @@ int print_x(va_list x)
  */
 int print_X(va_list X)
 {
-	return (print_hexidecmial(va_arg(X, unsigned int), 1));
+	return (print_hex(va_arg(X, unsigned int), 1));
 }
 
 /**
@@ -81,12 +81,12 @@ static unsigned long _pow(unsigned int base, unsigned int exponent)
 }
 
 /**
- * print_add - prints an address
+ * print_address - prints an address
  * @p: address to print
  *
  * Return: number of characters to print
  */
-int print_add(va_list p)
+int print_address(va_list p)
 {
 	int count = 0;
 	unsigned int a[16];

@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- * print_ch - prints out a char
- * @c: char input to print
+ * print_ch - prints a char
+ * @c: char to print
  *
  * Return: always 1
  */
-int print_char(va_list c)
+int print_ch(va_list c)
 {
 	char ch = (char)va_arg(c, int);
 
@@ -16,10 +16,10 @@ int print_char(va_list c)
 }
 
 /**
- * print_string - this function prints a string
- * @s: string input to print
+ * print_string - prints a string
+ * @s: string to print
  *
- * Return: number of chars printed in runtime
+ * Return: number of chars printed
  */
 int print_string(va_list s)
 {
@@ -36,37 +36,36 @@ int print_string(va_list s)
 }
 
 /**
- * hexa_pring - prints a char's ascii value in uppercase hexadecimal
+ * hex_print - prints a char's ascii value in uppercase hex
  * @c: char to print
  *
  * Return: number of chars printed (always 2)
  */
-static int hexa_print(char c)
+static int hex_print(char c)
 {
-	int counter;
+	int count;
 	char diff = 'A' - ':';
 	char d[2];
 
 	d[0] = c / 16;
 	d[1] = c % 16;
-	for (counter = 0; counter < 2; counter++)
+	for (count = 0; count < 2; count++)
 	{
-		if (d[counter] >= 10)
-			_putchar('0' + diff + d[counter]);
+		if (d[count] >= 10)
+			_putchar('0' + diff + d[count]);
 		else
-			_putchar('0' + d[counter]);
+			_putchar('0' + d[count]);
 	}
-	return (counter);
+	return (count);
 }
 
 /**
- * super_print - function to print a string and nonprintable 
- * character ascii values
+ * print_S - prints a string and nonprintable character ascii values
  * @S: string to print
  *
  * Return: number of chars printed
  */
-int super_print(va_list S)
+int print_S(va_list S)
 {
 	unsigned int i;
 	int count = 0;
@@ -93,12 +92,12 @@ int super_print(va_list S)
 }
 
 /**
- * string_reverse - prints a string in reverse
+ * print_r - prints astring in reverse
  * @r: string to print
  *
  * Return: number of chars printed
  */
-int string_reverse(va_list r)
+int print_r(va_list r)
 {
 	char *str;
 	int i, count = 0;

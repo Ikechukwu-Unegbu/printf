@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * buffer - prints the buffer
- * @buf: buffer pointer argument
+ * print_buf - prints buffer
+ * @buf: buffer pointer
  * @nbuf: number of bytes to print
- * Return: no of bytes printed.
+ * Return: number of bytes printed.
  */
-int buffer(char *buff, unsigned int nbuff)
+int print_buf(char *buf, unsigned int nbuf)
 {
-	return (write(1, buff, nbuff));
+	return (write(1, buf, nbuf));
 }
