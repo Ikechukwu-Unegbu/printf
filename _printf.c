@@ -12,8 +12,8 @@ static int (*check_for_specifiers(const char *format))(va_list)
 	print_t p[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"i", print_int},
-		{"d", print_dec},
+		{"inv", print_int_val},
+		{"d_val", print_dec},
 		{"u", print_unsigned},
 		{"b", print_binary},
 		{"o", print_octal},
