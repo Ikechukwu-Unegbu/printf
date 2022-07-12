@@ -1,1 +1,1 @@
-Custom Printf Implementation by Ikechukwu Vincent and Oluwafemi  Olayode
+ALX Project by Oluwafemi and Ikechukwu
